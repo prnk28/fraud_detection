@@ -2,6 +2,8 @@ import json
 import pandas as pd
 import boto3
 import io
+import csv
+import random
 
 payload = pd.read_csv('creditcard.csv')
 payload_file = io.StringIO()

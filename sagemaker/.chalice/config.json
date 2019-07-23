@@ -1,0 +1,13 @@
+{
+    "version": "1.0",
+    "app_name": "fraud-detection",
+    "autogen_policy": false,
+    "environment_variables": {
+        "ENDPOINT_NAME": "fraud-detection-endpoint3"
+    },
+    "stages": {
+        "dev": {
+            "api_gateway_stage": "api"
+        }
+    }
+}
