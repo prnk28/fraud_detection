@@ -4,6 +4,7 @@ import base64
 import os
 import boto3
 import json
+import csv
 import io
 import ast
 import numpy as np
@@ -15,18 +16,16 @@ app.debug = True
 
 @app.route('/', methods=['POST'])
 def index():
+    # Convert JSON body into csv
     body = app.current_request.json_body
+    data = json.dumps(body)
+    payload = pd.read_json(data, orient='records')
 
-    # Check if Data Provided in Application
-    if 'data' not in body:
-        raise BadRequestError('Missing csv data')
-    if 'ENDPOINT_NAME' not in os.environ:
-        raise BadRequestError('Missing endpoint')
-
-    # Construct Image by bytes
-    payload = pd.read_csv(body['data'])
+    # Construct Payload for Sagemaker
     payload_file = io.StringIO()
     payload.to_csv(payload_file, header=None, index=None)
+    rec = payload.to_records(index=False)
+    s = rec.tostring()
 
     # Push Data to SageMaker Model
     client = boto3.client('sagemaker-runtime')

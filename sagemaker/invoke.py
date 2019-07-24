@@ -5,9 +5,10 @@ import io
 import csv
 import random
 
-payload = pd.read_csv('creditcard.csv')
+payload = pd.read_json("credit.json", orient='records')
 payload_file = io.StringIO()
 payload.to_csv(payload_file, header=None, index=None)
+print(payload)
 
 client = boto3.client('sagemaker-runtime')
 response = client.invoke_endpoint(
