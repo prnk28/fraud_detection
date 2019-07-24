@@ -14,7 +14,7 @@ app = Chalice(app_name='fraud-detection')
 app.debug = True
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST'],cors=True)
 def index():
     # Convert JSON body into csv
     body = app.current_request.json_body
@@ -24,8 +24,6 @@ def index():
     # Construct Payload for Sagemaker
     payload_file = io.StringIO()
     payload.to_csv(payload_file, header=None, index=None)
-    rec = payload.to_records(index=False)
-    s = rec.tostring()
 
     # Push Data to SageMaker Model
     client = boto3.client('sagemaker-runtime')
