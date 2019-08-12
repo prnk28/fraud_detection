@@ -37,4 +37,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Important Links
 https://prezi.com/p/d8hn-qx8w4cr/ -- Presentation
+<br>
 https://frauddetectionnotebookinstance.notebook.us-east-1.sagemaker.aws/notebooks/Fraud%20Detection%20Implementation.ipynb -- Jupyter Notebook
