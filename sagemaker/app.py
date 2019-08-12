@@ -20,7 +20,7 @@ def index():
     body = app.current_request.json_body
     data = json.dumps(body)
     payload = pd.read_json(data, orient='records')
-
+    
     # Construct Payload for Sagemaker
     payload_file = io.StringIO()
     payload.to_csv(payload_file, header=None, index=None)
