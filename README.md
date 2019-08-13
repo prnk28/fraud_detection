@@ -36,6 +36,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Important Links
-https://prezi.com/p/d8hn-qx8w4cr/ -- Presentation
+https://prezi.com/view/4XaDXxkWe0tsz1wFjGGf/ -- Presentation
 <br>
 https://frauddetectionnotebookinstance.notebook.us-east-1.sagemaker.aws/notebooks/Fraud%20Detection%20Implementation.ipynb -- Jupyter Notebook
